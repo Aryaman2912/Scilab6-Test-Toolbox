@@ -17,12 +17,12 @@ int** transpose(int matrix[][m]){
 
     // Compute the transpose of the matrix
     // formula used: transpose[i][j] = matrix[j][i] for all i,j
-    for(int i = 0; i < n; i++){
-    	for(int j = 0; j < m; j++){
-    		transpose_matrix[j][i] = matrix[i][j];
+    for(int i = 0; i < m; i++){
+    	for(int j = 0; j < n; j++){
+    		transpose_matrix[i][j] = matrix[j][i];
     	}
     }
 
-    // return double pointer to result matrix
+    // return double pointer to transpose matrix
     return transpose_matrix;
 };
