@@ -5,3 +5,16 @@ This toolbox overall demonstrates
 2. How to add a function defined in Scilab in Scilab
 3. How to write help for the added functions
 4. How to create a toolbox out of the above functions.
+
+Instructions to build, compile and execute the transpose function.
+1. Open Scilab console and go to Scilab6-Test-Toolbox repository directory
+2. Execute "exec builder.sce" to build the toolbox.
+3. Execute "exec loader.sce" to load the toolbox into Scilab.
+4. execute "help" and go to "test_toolbox" to read about how the transpose function works.
+
+Syntax:
+
+```
+matrix = [1,2,3;4,5,6;7,8,9]
+transpose_matrix = transpose(matrix)
+```

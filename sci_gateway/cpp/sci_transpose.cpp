@@ -38,7 +38,7 @@ int sci_transpose(scilabEnv env, int nin, scilabVar* in, int nopt, scilabOpt* op
     //input is not a real, 2d matrix
     if(scilab_isDouble(env,in[0]) == 0 || scilab_isComplex(env,in[0]) == 1 || scilab_isMatrix2d(env,in[0]) == 0){
         Scierror(999,_("%s: Wrong type of input argument %d: Real matrix expected.\n"),fname,1);
-        return 1
+        return 1;
     }
 
     //number of output arguments is not 1
@@ -50,18 +50,18 @@ int sci_transpose(scilabEnv env, int nin, scilabVar* in, int nopt, scilabOpt* op
     // Get rows and columns of input matrix
     size1 = scilab_getDim2d(env,in[0],&rows,&columns);
 
-    // Get pointer to in[0] in in1
+    // Get pointer to in[0] as in1
     scilab_getDoubleArray(env,in[0],&in1);
 
     // Create 2d matrix of double type with dimensions (columns,rows) as it is transpose of given matrix
     out[0] = scilab_createDoubleMatrix2d(env,columns,rows,0);
 
-    // Get pointer to out[0] in out1
+    // Get pointer to out[0] as out1
     scilab_getDoubleArray(env,out[0],&out1);
 
     // Call transpose function to store the transpose of in[0] in out[0]
     trans((double*)out1,rows,columns,(double*)in1);
-    
+
     return 0;
     }
 }
